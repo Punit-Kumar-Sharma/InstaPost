@@ -1,0 +1,192 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.imagefiltering"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="31" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/debug/AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:4:5-67
+12-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:5:5-79
+13-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:5:22-77
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:6:5-80
+14-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:6:22-78
+15    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+15-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:7:5-75
+15-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:7:22-73
+16    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+16-->[com.facebook.flipper:flipper:0.125.0] /Users/itsforyou/.gradle/caches/transforms-3/03f04a3f11198ce3b7c6cedb9b41266b/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
+16-->[com.facebook.flipper:flipper:0.125.0] /Users/itsforyou/.gradle/caches/transforms-3/03f04a3f11198ce3b7c6cedb9b41266b/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
+17
+18    <queries>
+18-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-13:15
+19        <intent>
+19-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:18
+20            <action android:name="android.media.action.IMAGE_CAPTURE" />
+20-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-73
+20-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:21-70
+21        </intent>
+22    </queries> <!-- Required to access Google Play Licensing -->
+23    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+23-->[:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-73
+23-->[:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-70
+24    <!--
+25         Required to keep CPU alive while downloading files
+26        (NOT to keep screen awake)
+27    -->
+28    <uses-permission android:name="android.permission.WAKE_LOCK" />
+28-->[:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:5-68
+28-->[:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:22-65
+29    <!--
+30         Required to poll the state of the network connection
+31        and respond to changes
+32    -->
+33    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+33-->[:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:5-79
+33-->[:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:22-76
+34
+35    <application
+35-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:9:5-29:19
+36        android:name="com.imagefiltering.MainApplication"
+36-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:10:7-38
+37        android:allowBackup="false"
+37-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:14:7-34
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.7.0] /Users/itsforyou/.gradle/caches/transforms-3/63a3df243d2d102452600006144a86df/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+39        android:debuggable="true"
+40        android:icon="@mipmap/ic_launcher"
+40-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:12:7-41
+41        android:label="@string/app_name"
+41-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:11:7-39
+42        android:roundIcon="@mipmap/ic_launcher_round"
+42-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:13:7-52
+43        android:theme="@style/AppTheme"
+43-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:15:7-38
+44        android:usesCleartextTraffic="true" >
+44-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/debug/AndroidManifest.xml:8:9-44
+45        <activity
+45-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/debug/AndroidManifest.xml:11:9-111
+46            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+46-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/debug/AndroidManifest.xml:11:19-83
+47            android:exported="false" />
+47-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/debug/AndroidManifest.xml:11:84-108
+48        <activity
+48-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:16:7-28:18
+49            android:name="com.imagefiltering.MainActivity"
+49-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:17:9-37
+50            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+50-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:19:9-118
+51            android:exported="true"
+51-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:22:9-32
+52            android:label="@string/app_name"
+52-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:18:9-41
+53            android:launchMode="singleTask"
+53-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:20:9-40
+54            android:requestLegacyExternalStorage="true"
+54-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:23:9-52
+55            android:windowSoftInputMode="adjustResize" >
+55-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:21:9-51
+56            <intent-filter>
+56-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:24:9-27:25
+57                <action android:name="android.intent.action.MAIN" />
+57-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:25:13-65
+57-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:25:21-62
+58
+59                <category android:name="android.intent.category.LAUNCHER" />
+59-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:26:13-73
+59-->/Users/itsforyou/Desktop/RNImageFilter-main/android/app/src/main/AndroidManifest.xml:26:23-70
+60            </intent-filter>
+61        </activity>
+62
+63        <provider
+63-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-26:20
+64            android:name="com.reactnative.ivpusic.imagepicker.IvpusicImagePickerFileProvider"
+64-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-94
+65            android:authorities="com.imagefiltering.provider"
+65-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-60
+66            android:exported="false"
+66-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+67            android:grantUriPermissions="true" >
+67-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-47
+68            <meta-data
+68-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
+69                android:name="android.support.FILE_PROVIDER_PATHS"
+69-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+70                android:resource="@xml/ivpusic_imagepicker_provider_paths" />
+70-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
+71        </provider>
+72
+73        <activity
+73-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:72
+74            android:name="com.yalantis.ucrop.UCropActivity"
+74-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-60
+75            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+75-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-69
+76
+77        <provider
+77-->[:react-native-image-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+78            android:name="com.imagepicker.ImagePickerProvider"
+78-->[:react-native-image-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+79            android:authorities="com.imagefiltering.imagepickerprovider"
+79-->[:react-native-image-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-71
+80            android:exported="false"
+80-->[:react-native-image-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+81            android:grantUriPermissions="true" >
+81-->[:react-native-image-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+82            <meta-data
+82-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
+83                android:name="android.support.FILE_PROVIDER_PATHS"
+83-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+84                android:resource="@xml/imagepicker_provider_paths" />
+84-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
+85        </provider>
+86        <provider
+86-->[:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-42:20
+87            android:name="com.RNFetchBlob.Utils.FileProvider"
+87-->[:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-62
+88            android:authorities="com.imagefiltering.provider"
+88-->[:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-60
+89            android:exported="false"
+89-->[:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:13-37
+90            android:grantUriPermissions="true" >
+90-->[:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-47
+91            <meta-data
+91-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:78
+92                android:name="android.support.FILE_PROVIDER_PATHS"
+92-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+93                android:resource="@xml/provider_paths" />
+93-->[:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-75
+94        </provider>
+95        <provider
+95-->[androidx.emoji2:emoji2:1.0.0] /Users/itsforyou/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+96            android:name="androidx.startup.InitializationProvider"
+96-->[androidx.emoji2:emoji2:1.0.0] /Users/itsforyou/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+97            android:authorities="com.imagefiltering.androidx-startup"
+97-->[androidx.emoji2:emoji2:1.0.0] /Users/itsforyou/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+98            android:exported="false" >
+98-->[androidx.emoji2:emoji2:1.0.0] /Users/itsforyou/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+99            <meta-data
+99-->[androidx.emoji2:emoji2:1.0.0] /Users/itsforyou/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+100                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+100-->[androidx.emoji2:emoji2:1.0.0] /Users/itsforyou/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+101                android:value="androidx.startup" />
+101-->[androidx.emoji2:emoji2:1.0.0] /Users/itsforyou/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+102            <meta-data
+102-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/itsforyou/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+103                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+103-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/itsforyou/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+104                android:value="androidx.startup" />
+104-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/itsforyou/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+105        </provider>
+106    </application>
+107
+108</manifest>
