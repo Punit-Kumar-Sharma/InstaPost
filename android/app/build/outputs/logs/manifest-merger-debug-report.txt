@@ -10,10 +10,13 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] /Users/itsfory
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /Users/itsforyou/.gradle/caches/transforms-3/d00cb5af49214c127447117a850c65b4/transformed/jetified-flipper-fresco-plugin-0.125.0/AndroidManifest.xml:8:1-15:12
 MERGED from [:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-33:12
 MERGED from [:react-native-camera-roll_camera-roll] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/@react-native-camera-roll/camera-roll/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-picker_picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/@react-native-picker/picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-gesture-handler] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-image-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-21:12
 MERGED from [:react-native-safe-area-context] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-svg] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-vector-icons] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-45:12
 MERGED from [com.facebook.react:react-native:0.70.6] /Users/itsforyou/.gradle/caches/transforms-3/0b825f9a3cd84cf1738e48fbfed11fea/transformed/jetified-react-native-0.70.6-debug/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.1.0] /Users/itsforyou/.gradle/caches/transforms-3/50fb421c5eeb58c9cf65552dd3327c5f/transformed/swiperefreshlayout-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -213,6 +216,8 @@ MERGED from [:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFi
 MERGED from [:react-native-image-crop-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-camera-roll_camera-roll] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/@react-native-camera-roll/camera-roll/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-camera-roll_camera-roll] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/@react-native-camera-roll/camera-roll/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-picker_picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/@react-native-picker/picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-picker_picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/@react-native-picker/picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-image-picker] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -221,6 +226,10 @@ MERGED from [:react-native-safe-area-context] /Users/itsforyou/Desktop/RNImageFi
 MERGED from [:react-native-safe-area-context] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-svg] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-svg/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-vector-icons] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/react-native-vector-icons/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:rn-fetch-blob] /Users/itsforyou/Desktop/RNImageFilter-main/node_modules/rn-fetch-blob/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.70.6] /Users/itsforyou/.gradle/caches/transforms-3/0b825f9a3cd84cf1738e48fbfed11fea/transformed/jetified-react-native-0.70.6-debug/AndroidManifest.xml:5:5-7:41

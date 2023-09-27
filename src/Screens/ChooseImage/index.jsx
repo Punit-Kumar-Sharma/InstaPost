@@ -22,14 +22,15 @@ import Loader from '../../Components/Loader';
 import ImagePicker from 'react-native-image-crop-picker';
 import EditHeader from '../../Components/EditHeader';
 import { CameraRoll } from "@react-native-camera-roll/camera-roll";
-import GalleryHeader from '../../Components/GalleryHeader';
 
 const windowWidth = Dimensions.get('window').width;
+const windowheight = Dimensions.get('window').height;
 
 const CreatePost = ({ navigation }) => {
   const [thumbnail, setThumbnail] = useState({});
   const [loaderVisible, setLoaderVisible] = useState(false);
   const [photos, setPhotos] = useState([]);
+  const [page, setPage] = useState("Post");
 
   useEffect(() => {
     const requestCameraRollPermission = async () => {
@@ -61,8 +62,13 @@ const CreatePost = ({ navigation }) => {
     // Fetch photos from the camera roll
     CameraRoll.getPhotos(fetchParams).then((data) => {
       const assets = data.edges.map((item) => item.node.image);
-      console.log("assetsassetsassetsassets", assets)
       setPhotos(assets);
+      const photoData1 = {
+        uri: assets[0].uri,
+        // type: assets.assets[0].type,
+        name: assets[0].filename,
+      };
+      setThumbnail(photoData1);
     });
   };
 
@@ -122,48 +128,19 @@ const CreatePost = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.safeView}>
-      <EditHeader title={"New Post"} onNextClick={handleNextStepClick} />
+      <EditHeader title={"New Post"} onNextClick={handleNextStepClick}/>
       <View style={styles.imageView}>
-        {Object.keys(thumbnail).length ? (
-          <>
-            {/* Display the selected image */}
-            <View style={styles.insideView}>
               <Image
                 source={{ uri: thumbnail?.uri }}
                 style={styles.thumbImage}
                 resizeMode={'contain'}
               />
-            </View>
-          </>
-        ) : (
-          <>
-            {/* Display the gallery when no image is selected */}
-            <View style={{ ...styles.pickContainer, height: 150 }}>
-              <TouchableOpacity
-                // onPress={() => setThumbnail({})} /* Remove this line */
-                activeOpacity={0.7}>
-                <View style={styles.galleryView}>
-                  <Image
-                    source={require('../../Assests/Pick.png')}
-                    style={styles.galleryImg}
-                    resizeMode="contain"
-                  />
-                </View>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.postTextView}>
-              <Text style={styles.introText}>
-                {Constants.create_post_story}
-              </Text>
-            </View>
-          </>
-        )}
       </View>
-      <GalleryHeader/>
+      <Text style={styles.GalleryHeader}>{"Gallery Images"}</Text>
       <ScrollView>
       
-        {chunkArray(photos, 3).map((row, rowIndex) => (
-          <View key={rowIndex} style={styles.row}>
+        {chunkArray(photos, 4).map((row, rowIndex) => (
+          <View key={rowIndex} style={styles.galleryImagesWrapper}>
             {/* <> */}
             
             {row.map((photo, photoIndex) => (
@@ -181,101 +158,80 @@ const CreatePost = ({ navigation }) => {
         ))}
       </ScrollView>
       <Loader titleText={''} visible={loaderVisible} />
+      <View style={styles.footer}>
+        <TouchableOpacity onPress={()=>setPage("Post")} style={[page==="Post" ?styles.pickedFooterSection:styles.footerSection]}>
+          <Text style={[page==="Post" ?styles.pickedFooterTitle:styles.footerTitle]}>Post</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>setPage("Story")} style={[page==="Story" ?styles.pickedFooterSection:styles.footerSection]}>
+          <Text style={[page==="Story" ?styles.pickedFooterTitle:styles.footerTitle]}>Story</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={()=>setPage("Reel")} style={[page==="Reel" ?styles.pickedFooterSection:styles.footerSection]}>
+          <Text style={[page==="Reel" ?styles.pickedFooterTitle:styles.footerTitle]}>Reel</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  button_next: {
-    textTransform: 'uppercase',
-    fontSize: wp('5%'),
-    color: 'white',
-    marginHorizontal: wp('7%'),
-  },
-  editView: {
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    marginTop: wp('5%'),
-    alignSelf: 'flex-end',
-    display: 'flex',
-    flexDirection: 'row',
-  },
   imageView: {
-    paddingHorizontal: wp('5%'),
-    paddingVertical: wp('10%'),
+    // paddingHorizontal: wp('5%'),
+    // paddingVertical: wp('5%'),
+    marginTop:wp('5%'),
     backgroundColor: '#FFFFFF',
-    marginTop: wp('5%'),
     width: wp('100%'),
-  },
-  insideView: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    elevation:0.5
   },
   thumbImage: {
     width: wp('100%'),
     height: wp('80%'),
-  },
-  editImage: {
-    width: wp('4.5%'),
-    height: wp('4.5%'),
-    tintColor: '#FFFFFF',
-  },
-  galleryView: {
-    height: wp('20%'),
-    width: wp('20%'),
-    backgroundColor: '#FF701F',
-    borderRadius: 40,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  galleryImg: {
-    height: wp('7%'),
-    width: wp('7%'),
-    tintColor: 'white',
-  },
-  postTextView: {
-    marginTop: wp('5%'),
+    backgroundColor: '#000',
   },
   safeView: {
     flex: 1,
     backgroundColor: '#fff',
   },
-  buttonView: {
-    marginTop: wp('7%'),
-    marginBottom: wp('3%'),
-  },
-  pickContainer: {
-    borderWidth: 1,
-    borderColor: '#DFDFDF',
-    marginTop: hp('10%'),
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderStyle: 'dashed',
-    width: '100%',
-    paddingVertical: wp('7%'),
-  },
-  addLessonBtnContainer: {
-    backgroundColor: '#FF701F',
-    borderRadius: 4,
-    paddingHorizontal: wp('3%'),
-    paddingVertical: wp('2%'),
-  },
-  introText: {
-    textTransform: 'uppercase',
-    textAlign: 'center',
-    textAlignVertical: 'center',
-    color: '#1F1F1F',
-    fontSize: wp('5%'),
-  },
-  row: {
-    flexDirection: 'row',
-    // justifyContent: 'space-between',
-    marginBottom: 10,
+  GalleryHeader: {
+    color: '#000',
+    fontSize: 19,
+    fontWeight: "600",
+    marginLeft:10,
+    paddingVertical:10,
+    elevation:0.5
   },
   image: {
-    width: (windowWidth - 20) / 3, // Divide by 3 for three images in a row
-    height: 100, // Adjust the height as needed
+    width: windowWidth / 4,
+    height: windowheight / 6,
+    padding: 1,
+  },
+  galleryImagesWrapper: {
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  footer: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent:"space-evenly"
+  },
+  footerSection: {
+    // flex: 1,
+    alignItems: 'center',
+    padding: 10,
+  },
+  pickedFooterSection: {
+    padding: 10,
+    borderBottomColor: 'black',
+    borderBottomWidth: 2,
+  },
+  pickedFooterTitle: {
+    fontSize: 16,
+    color: 'black',
+  },
+  footerTitle: {
+    fontSize: 16,
+    color: 'gray',
   },
 });
 

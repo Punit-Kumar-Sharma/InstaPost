@@ -12,23 +12,34 @@ import {
   TouchableOpacity,
   ImageBackground,
   View,
+  Dimensions,
+  Modal
 } from 'react-native';
 import { FILTERS } from '../../Helpers/Filters';
 import Button from '../../Components/Button';
 import Constants from '../../Constants/Constants';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import EditHeader from '../../Components/EditHeader';
+import StickersComponent from '../../Components/StickersComponent';
+import Draggable from 'react-native-draggable';
+
+const windowWidth = Dimensions.get('window').width;
 
 const FilterScreen = ({ navigation, route }) => {
-
   const [selectedFilterIndex, setIndex] = useState(0);
-  const [image, SetImage] = useState('')
+  const [image, SetImage] = useState('');
   const [thumbnail, setThumbnail] = useState({});
+  const [showStickers, setShowStickers] = useState(false);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [stickers, setStickers] = useState([]);
+  const [stickerPositions, setStickerPositions] = useState([]); // Added state for sticker positions
 
+  const openModal = () => {
+    setShowStickers(!showStickers);
+  };
   useEffect(() => {
     getImageFromNavigation()
-    console.log("imageData",route?.params?.imageData)
-  })
+  }, []); // Added empty dependency array to useEffect
 
   const getImageFromNavigation = () => {
     if (route?.params?.imageData) {
@@ -37,40 +48,32 @@ const FilterScreen = ({ navigation, route }) => {
   }
 
   const onExtractImage = ({ nativeEvent }) => {
-    SetImage(nativeEvent.uri)
-    extractedUri.current = nativeEvent.uri;
+    SetImage(nativeEvent.uri);
   };
 
   const onSelectFilter = selectedIndex => {
     setIndex(selectedIndex);
   };
 
-  const extractedUri = useRef(thumbnail?.path);
-
   const handleNextStepClick = async () => {
     try {
       let imagePath;
-      console.log("imagePath",thumbnail?.path)
       if (selectedFilterIndex === 0) {
         imagePath = thumbnail?.path;
       } else {
         imagePath = image;
       }
-  
+
       if (!imagePath || typeof imagePath !== 'string') {
-        // Ensure imagePath is a valid string file path
         console.log('Invalid image path');
         return;
       }
-  
+
       navigation.navigate('ViewImage', { imageString: imagePath });
     } catch (error) {
       console.error('An error occurred:', error);
-      // Alert.alert('An error occurred');
     }
   };
-  
-
 
   const renderFilterComponent = ({ item, index }) => {
     const FilterComponent = item.filterComponent;
@@ -90,12 +93,23 @@ const FilterScreen = ({ navigation, route }) => {
   };
 
   const SelectedFilterComponent = FILTERS[selectedFilterIndex].filterComponent;
+  const handleStickersClick = () => {
+    setShowStickers(true);
+  };
+
+  const handleStickerDrag = (index, event, gestureState) => {
+    const updatedStickerPositions = [...stickerPositions];
+    updatedStickerPositions[index] = {
+      x: gestureState.moveX,
+      y: gestureState.moveY,
+    };
+    setStickerPositions(updatedStickerPositions);
+  };
 
   return (
     <>
-      <SafeAreaView
-        style={styles.safeView}>
-        <EditHeader title={"Filters"} onNextClick={handleNextStepClick} />
+      <SafeAreaView style={styles.safeView}>
+        <EditHeader title={"Filters"} onNextClick={handleNextStepClick} onStickersClick={handleStickersClick}/>
         <ImageBackground
           source={require('../../Assests/image_background.png')}
           style={styles.container}>
@@ -103,13 +117,40 @@ const FilterScreen = ({ navigation, route }) => {
           <KeyboardAwareScrollView
             contentContainerStyle={styles.keyboardContainer}
             resetScrollToCoords={{ x: 0, y: 0 }}>
-
+            
             {selectedFilterIndex === 0 ? (
-              <Image
-                style={styles.default_Img}
-                source={{ uri: thumbnail?.path }}
-                resizeMode='contain'
-              />
+              <View style={styles.canvas}>
+                <Image
+                  style={styles.default_Img}
+                  source={{ uri: thumbnail?.path }}
+                  resizeMode='contain'
+                />
+                  {/* <View style={styles.canvas}> */}
+                  {stickers?.map((sticker, index) => (
+                    <Draggable
+                      key={index}
+                      x={sticker.position?.x}
+                      y={sticker.position?.y}
+                      renderSize={80}
+                      isCircle
+                      renderText={`Sticker ${index + 1}`}
+                      // onDrag={(event, gestureState) => handleStickerDrag(index, event, gestureState)}
+                      onDrag={(event, gesture) => {
+                        // Update sticker position on drag
+                        const newStickers = [...stickers];
+                        newStickers[index].position.x = gesture?.moveX;
+                        newStickers[index].position.y = gesture?.moveY;
+                        setStickers(newStickers);
+                      }}
+                    >
+                      <Image
+                        source={{ uri: sticker?.uri }}
+                        style={styles.stickerImage}
+                      />
+                    </Draggable>
+                  ))}
+                </View>
+              // </View>
             ) : Object.keys(thumbnail).length && (
               <SelectedFilterComponent
                 onExtractImage={onExtractImage}
@@ -123,6 +164,7 @@ const FilterScreen = ({ navigation, route }) => {
                 }
               />
             )}
+            <Text style={styles.GalleryHeader}>{"Filters"}</Text>
             <FlatList
               data={FILTERS}
               keyExtractor={item => item.title}
@@ -130,15 +172,17 @@ const FilterScreen = ({ navigation, route }) => {
               horizontal={true}
               renderItem={renderFilterComponent}
             />
-            {/* <View style={styles.buttonView}>
-              <Button
-                title={Constants.next}
-                onclick={handleNextStepClick}
-                style={{ textTransform: 'uppercase' }}
-              />
-            </View> */}
           </KeyboardAwareScrollView>
         </ImageBackground>
+        <Modal
+          animationType="slide"
+          transparent={false}
+          visible={showStickers}
+          onRequestClose={openModal}
+          style={{ height: "50%", backgroundColor: "#000" }}
+        >
+          <StickersComponent style={{ maxHeight: "50%" }} onStickerSelection={setStickers} onClose={openModal} />
+        </Modal>
       </SafeAreaView>
     </>
   );
@@ -149,7 +193,16 @@ const styles = StyleSheet.create({
     width: wp('100%'),
     height: hp('50%'),
     alignSelf: 'center',
-    alignContent: 'center'
+    alignContent: 'center',
+    backgroundColor:"#000"
+  },
+  GalleryHeader: {
+    marginTop: 20,
+    color: '#000',
+    fontSize: 19,
+    fontWeight: "600",
+    marginLeft:10,
+    paddingVertical:10
   },
   keyboardContainer: {
     width: wp('90%'),
@@ -168,8 +221,9 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   filterTitle: {
-    marginTop: 70,
-    fontSize: 12,
+    // marginTop: 70,
+    fontSize: 14,
+    color:"#000",
     textAlign: 'center',
   },
   container: {
@@ -178,6 +232,31 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
     marginTop:10
+  },
+  stickersContainer: {
+    flex: 1,
+    flexDirection: 'column',
+  },
+  stickerPicker: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    padding: 10,
+  },
+  stickerThumbnail: {
+    width: (windowWidth - 20) / 4, // Show 4 stickers per row, adjust as needed
+    height: 80, // Adjust the height as needed
+    marginBottom: 10,
+  },
+  canvas: {
+    // flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    // backgroundColor: 'white',
+  },
+  stickerImage: {
+    width: 80, // Adjust the size as needed
+    height: 80, // Adjust the size as needed
   },
 });
 export default FilterScreen;

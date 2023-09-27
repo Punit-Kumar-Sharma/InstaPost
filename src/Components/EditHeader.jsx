@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Image,StatusBar } from 'react-native';
 
-const EditHeader = ({title, onNextClick}) => {
+const EditHeader = ({title, onNextClick,onStickersClick}) => {
 
   return (
     <View style={styles.headerContainer}>
@@ -14,10 +14,14 @@ const EditHeader = ({title, onNextClick}) => {
         </TouchableOpacity>
       <Text style={styles.appTitleMain}>{title}</Text>
       </View>
-      <View>
+      <View style={{flexDirection:"row"}}>
       <TouchableOpacity onPress={onNextClick}>
-      <Text style={{...styles.appTitleMain, color: '#1D7BBF'}}>{"Next"}</Text>
-        </TouchableOpacity>
+        <Text style={{...styles.appTitleMain, color: '#1D7BBF'}}>{"Next"}</Text>
+      </TouchableOpacity>
+      {title==="Filters"&& 
+      <TouchableOpacity onPress={onStickersClick}>
+        <Text style={{...styles.appTitleMain, color: '#1D7BBF'}}>{"Stickers"}</Text>
+      </TouchableOpacity>}
       </View>
     </View>
   );
